@@ -1,0 +1,28 @@
+<div [class]="isSpecial ? 'special' : ''">This is special</div>
+<div [class.special]="isSpecial">This is special</div>
+<div [style]="{color: isSpecial ? 'red' : 'blue'}">Styled Text</div>
+<div [style.color]="isSpecial ? 'red' : 'blue'">Styled Text</div>
+<button [attr.aria-label]="label">Button</button>
+<!-- Объект -->
+<div [ngClass]="{'special': isSpecial, 'highlight': isHighlighted}">This is special</div>
+
+<!-- Строка -->
+<div [ngClass]="'special highlight'">This is special</div>
+
+<!-- Массив -->
+<div [ngClass]="['special', 'highlight']">This is special</div>
+<div [ngStyle]="{'font-style': isItalic ? 'italic' : 'normal', 'font-weight': isBold ? 'bold' : 'normal'}">
+    Styled Text
+  </div>
+  <div *ngIf="isVisible">Visible Content</div>
+  <div *ngFor="let item of items">{{ item }}</div>
+  <div [ngSwitch]="expression">
+    <ng-template [ngSwitchCase]="'A'">Case A</ng-template>
+    <ng-template [ngSwitchCase]="'B'">Case B</ng-template>
+    <ng-template ngSwitchDefault>Default Case</ng-template>
+  </div>
+  <input [(ngModel)]="name">
+  <p>Your name is {{ name }}</p>
+  <button [disabled]="isDisabled">Submit</button>
+  <div [hidden]="isHidden">This is hidden</div>
+  <span [ngClass] = "{bold: true, italic: true}" >Your Name</span>      
